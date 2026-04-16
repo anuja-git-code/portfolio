@@ -675,8 +675,9 @@ section h2::after {
 .contact-details a {
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.87rem;
+  font-size: 0.82rem;
   transition: color 0.2s ease;
+  word-break: break-all;
 }
 
 .contact-details a:hover {

@@ -33,13 +33,10 @@
                 </p>
 
                 <div class="hero-skills">
-                    <span class="skill-badge">Java</span>
-                    <span class="skill-badge">HTML & CSS</span>
-                    <span class="skill-badge">JavaScript</span>
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">React</span>
-                    <span class="skill-badge">Problem Solving</span>
-                </div>
+                    <span class="skill-badge">keep Moving</span>
+                    <span class="skill-badge">keep Learning</span>
+                    <span class="skill-badge">keep Growing</span>
+                 </div>
 
                 <div class="hero-links">
                     <a href="#education-experience" class="hero-link">View My Journey</a>
@@ -50,7 +47,7 @@
             </div>
 
             <div class="hero-image">
-                <img src="profile.png" alt="Anuja Sathe" class="profile-hero">
+                <img src="anuja.jpeg" alt="Anuja Sathe" class="profile-hero">
             </div>
         </div>
     </section>
@@ -65,7 +62,7 @@
                         <div class="education-item">
                             <div class="education-header">
                                 <h3>B.Tech Computer Engineering</h3>
-                                <span class="education-year">2027 (expected)</span>
+                                <span class="education-year">2028 (expected)</span>
                             </div>
                             <div class="education-institution">Rajarambapu Institute of Technology, Rajaramnagar</div>
                             <div class="education-location">Maharashtra</div>
@@ -104,7 +101,6 @@
                                 <span class="experience-period">2025 - Present</span>
                             </div>
                             <div class="experience-company">Indo-Universal Collaboration for Engineering Education (IUCEE)</div>
-                            <div class="experience-location">International</div>
                             <div class="experience-description">
                                 <p>Active student member of IUCEE, contributing to the advancement of engineering education through professional networking and knowledge sharing.</p>
                                 <ul>
@@ -239,7 +235,7 @@
             <h2>Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <img src="project1.svg" alt="Gym Scheduling System" class="project-img">
+                    <img src="1.png" alt="Gym Scheduling System" class="project-img">
                     <div class="project-content">
                         <h3>Gym Scheduling System</h3>
                         <p>The Gym Scheduling System provides a centralized, automated platform that allows real-time booking and scheduling of gym resources. It targets both gym members who seek convenient booking options and gym staff who need a structured way to manage schedules.</p>
@@ -252,8 +248,25 @@
                         <p>The app includes two distinct interfaces: an Admin panel and a User panel. The Admin panel is responsible for managing all contact entries, allowing only authorized admin users to add, update, or remove professional contacts. In contrast, the User panel provides a read-only view, enabling users to search for and contact professionals quickly, without the ability to modify or manage the directory.</p>
                     </div>
                 </div>
+                
                 <div class="project-card">
-                    <img src="project2.svg" alt="Portfolio Website" class="project-img">
+                    <img src="2.png" alt="Smart Road Damage System" class="project-img">
+                    <div class="project-content">
+                        <h3>Smart Road Damage System</h3>
+                        <p>A comprehensive dashboard for monitoring and detecting road damages using smart technology. This system helps in efficient road maintenance and safety improvements.</p>
+                        <div class="project-tools">
+                            <strong>Technologies:</strong> React, JavaScript, Vercel
+                        </div>
+                        <a href="https://v0-smart-road-damage-dashboard.vercel.app/" target="_blank" class="btn project-btn">View Project</a>
+                        <button class="btn project-btn" onclick="toggleProjectDetails(3)">View Details</button>
+                    </div>
+                    <div class="project-details" id="project-details-3" style="display: none;">
+                        <p>The Smart Road Damage System provides real-time monitoring of road conditions, damage detection, and data visualization through an interactive dashboard. It aims to improve infrastructure maintenance and public safety.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="3.png" alt="Portfolio Website" class="project-img">
                     <div class="project-content">
                         <h3>Personal Portfolio Website</h3>
                         <p>A responsive portfolio website showcasing my skills, projects, and achievements. Built with modern web technologies for an interactive user experience.</p>
@@ -264,6 +277,22 @@
                     </div>
                     <div class="project-details" id="project-details-2" style="display: none;">
                         <p>This portfolio website features smooth scrolling, dark mode toggle, interactive elements, and responsive design. It includes sections for about me, skills, projects, certificates, and contact information.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="4.png" alt="QuantumGuard Blockchain System" class="project-img">
+                    <div class="project-content">
+                        <h3>QuantumGuard Blockchain System for Farmers</h3>
+                        <p>A blockchain-based platform designed to secure transactions, data integrity, and supply chain management for farmers. Built during a hackathon to address agricultural challenges.</p>
+                        <div class="project-tools">
+                            <strong>Technologies:</strong> Blockchain, React, JavaScript, Vercel
+                        </div>
+                        <a href="https://quantum-guard-hackathon.vercel.app/" target="_blank" class="btn project-btn">View Project</a>
+                        <button class="btn project-btn" onclick="toggleProjectDetails(4)">View Details</button>
+                    </div>
+                    <div class="project-details" id="project-details-4" style="display: none;">
+                        <p>QuantumGuard leverages blockchain technology to create a secure and transparent system for farmers. It includes features for transaction security, data verification, and supply chain traceability to empower agricultural communities.</p>
                     </div>
                 </div>
             </div>
@@ -283,8 +312,8 @@
                     <div class="certificate-title">Capstone Project Research Paper</div>
                 </div>
                 <div class="certificate-item">
-                    <img src="cert3.svg" alt="Python Bootcamp" class="certificate-img">
-                    <div class="certificate-title">Python Bootcamp Certificate</div>
+                    <img src="hackcertificate.jpeg" alt="Finalist of Hacksagon2026(IIITM Gwalior)" class="certificate-img">
+                    <div class="certificate-title">Finalist -  Hacksagon2026(IIITM Gwalior)</div>
                 </div>
             </div>
         </div>
@@ -312,14 +341,16 @@
                     <img src="github.svg" alt="GitHub" class="contact-icon">
                     <div class="contact-details">
                         <span class="contact-label">GitHub</span>
-                        <a href="https://github.com/anuja-git-code" target="_blank">github.com/anuja-git-code</a>
+                        <a href="https://github.com/anuja-git-code" target="_blank">anuja-git-code</a>
+                        <br>
+                        <a href="https://github.com/2560006-prog" target="_blank">2560006-prog</a>
                     </div>
                 </div>
                 <div class="contact-card">
                     <img src="linkedin.svg" alt="LinkedIn" class="contact-icon">
                     <div class="contact-details">
                         <span class="contact-label">LinkedIn</span>
-                        <a href="https://www.linkedin.com/in/anuja-sathe-4421ab252" target="_blank">linkedin.com/in/anujasathe</a>
+                        <a href="https://www.linkedin.com/in/anuja-sathe-4421ab252" target="_blank">anujasathe</a>
                     </div>
                 </div>
             </div>

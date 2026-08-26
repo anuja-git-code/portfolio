@@ -1,350 +1,1452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anuja Sathe | Software Developer</title>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Hi, I'm Anuja Sathe — a passionate Full Stack Developer & problem solver from Maharashtra. Explore my projects, skills, and journey in tech!">
-  <meta name="keywords" content="Anuja Sathe, Software Developer, Full Stack Developer, Web Developer, Android Developer, Portfolio, Maharashtra, RIT">
-  <meta name="author" content="Anuja Sathe">
-  <meta property="og:title" content="Anuja Sathe | Software Developer">
-  <meta property="og:description" content="Passionate Full Stack Developer building creative, user-friendly applications. Check out my work!">
-  <meta property="og:url" content="https://anujacodes.vercel.app/">
-  <meta property="og:type" content="website">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anuja Sathe | Software Developer</title>
+
+    <meta
+        name="description"
+        content="Anuja Sathe — Software Developer, Full Stack Developer and creative problem solver."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --cream: #f8f5f0;
+            --cream2: #eee9df;
+            --lavender: #d9cee3;
+            --lavender-dark: #8e789e;
+            --green: #dfe1d5;
+            --dark: #252321;
+            --brown: #5d5148;
+            --white: #fffdf9;
+            --gold: #b49b63;
+            --border: rgba(50, 45, 40, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(248, 245, 240, 0.92);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            width: min(1180px, 92%);
+            margin: auto;
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-star {
+            color: var(--gold);
+            font-size: 30px;
+        }
+
+        .logo-text strong {
+            display: block;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 8px;
+            letter-spacing: 3px;
+            color: #777;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--lavender-dark);
+        }
+
+        .nav-btn {
+            background: var(--lavender-dark);
+            color: white;
+            border-radius: 30px;
+            padding: 11px 20px;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            position: relative;
+            min-height: 680px;
+            overflow: hidden;
+            padding: 90px 0 70px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 430px;
+            height: 430px;
+            border-radius: 50%;
+            background: var(--lavender);
+            left: -180px;
+            bottom: 40px;
+            opacity: 0.65;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 48% 52%;
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 6vw, 88px);
+            font-weight: 400;
+            line-height: 0.98;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 em {
+            color: var(--lavender-dark);
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-family: Arial, sans-serif;
+            max-width: 490px;
+            font-size: 14px;
+            color: #625b55;
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 13px 23px;
+            border-radius: 30px;
+            background: var(--lavender-dark);
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn.outline {
+            background: transparent;
+            color: var(--dark);
+            border: 1px solid var(--dark);
+        }
+
+        .hero-photo {
+            width: min(550px, 100%);
+            height: 570px;
+            margin-left: auto;
+            overflow: hidden;
+            border-radius: 48% 48% 0 0;
+            position: relative;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-photo::after {
+            content: "";
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(255,255,255,.5);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            background: var(--white);
+            border-radius: 45px 45px 0 0;
+            padding: 65px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 35% 45% 20%;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .intro-photo {
+            height: 300px;
+            border-radius: 50% 50% 20px 20px;
+            overflow: hidden;
+        }
+
+        .intro-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .section-label {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            font-size: 9px;
+            letter-spacing: 2px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .intro h2 {
+            font-size: 38px;
+            line-height: 1.1;
+            font-weight: 400;
+            margin-bottom: 18px;
+        }
+
+        .intro h2 em {
+            color: var(--lavender-dark);
+        }
+
+        .intro p {
+            font-family: Arial, sans-serif;
+            color: #6b655f;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .signature {
+            margin-top: 18px;
+            font-style: italic;
+            font-size: 24px;
+        }
+
+        .stats {
+            border-left: 1px solid var(--border);
+            padding-left: 30px;
+        }
+
+        .stat {
+            margin-bottom: 20px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 28px;
+            font-weight: 400;
+        }
+
+        .stat span {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            color: #777;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services {
+            padding: 70px 0;
+            background: var(--green);
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            font-weight: 400;
+        }
+
+        .section-heading p {
+            font-family: Arial, sans-serif;
+            color: #777;
+            font-size: 13px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: rgba(0,0,0,.1);
+        }
+
+        .service {
+            background: var(--green);
+            padding: 30px 25px;
+            text-align: center;
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            margin: 0 auto 20px;
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .service h3 {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            color: #69645e;
+            line-height: 1.7;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
+            background: var(--white);
+            padding: 75px 0;
+        }
+
+        .projects-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 35px;
+        }
+
+        .projects-heading h2 {
+            font-size: 45px;
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .project-card {
+            background: #f4f0e9;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 7px;
+        }
+
+        .project-content p {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-tools {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .small-link {
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid;
+            padding-bottom: 4px;
+        }
+
+        /* ================= PROCESS ================= */
+
+        .process {
+            padding: 70px 0;
+            background: #f0eaf2;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .process-grid::before {
+            content: "";
+            position: absolute;
+            top: 28px;
+            left: 10%;
+            right: 10%;
+            border-top: 1px dashed #999;
+        }
+
+        .process-step {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .process-number {
+            width: 55px;
+            height: 55px;
+            background: #f0eaf2;
+            border: 1px solid #aaa;
+            border-radius: 50%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+        }
+
+        .process-step h3 {
+            margin-top: 15px;
+            font-size: 17px;
+            font-weight: 400;
+        }
+
+        .process-step p {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            color: #777;
+        }
+
+        /* ================= TESTIMONIAL ================= */
+
+        .testimonials {
+            padding: 75px 0;
+            background: var(--white);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .testimonial {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            background: #faf7f2;
+        }
+
+        .quote {
+            color: var(--lavender-dark);
+            font-size: 35px;
+        }
+
+        .testimonial p {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #666;
+            line-height: 1.7;
+            margin: 10px 0 25px;
+        }
+
+        .person {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--lavender);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .person strong {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+        }
+
+        .person span {
+            font-family: Arial, sans-serif;
+            font-size: 9px;
+            color: #888;
+        }
+
+        /* ================= CERTIFICATES ================= */
+
+        .certificates {
+            background: var(--cream2);
+            padding: 70px 0;
+        }
+
+        .certificate-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .certificate {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .certificate img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .certificate div {
+            padding: 18px;
+            font-size: 16px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            padding: 70px 0;
+            background: var(--lavender);
+        }
+
+        .contact-box {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .contact h2 {
+            font-size: 50px;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .contact p {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #655d68;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,.35);
+            padding: 25px;
+            border-radius: 20px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #aaa;
+            background: transparent;
+            padding: 14px 5px;
+            margin-bottom: 15px;
+            outline: none;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-form textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 35px 0;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        footer p,
+        footer a {
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            color: #ccc;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid,
+            .intro-grid,
+            .contact-box {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 50px;
+            }
+
+            .hero-photo {
+                margin: 40px auto 0;
+                height: 500px;
+            }
+
+            .intro-photo {
+                max-width: 400px;
+            }
+
+            .stats {
+                border-left: 0;
+                border-top: 1px solid var(--border);
+                padding: 25px 0 0;
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-grid,
+            .certificate-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid::before {
+                display: none;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero-photo {
+                height: 400px;
+            }
+
+            .service-grid,
+            .project-grid,
+            .certificate-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                display: block;
+            }
+
+            .projects-heading {
+                display: block;
+            }
+
+            .projects-heading .small-link {
+                display: inline-block;
+                margin-top: 15px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact h2 {
+                font-size: 42px;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <nav id="navbar">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#education-experience">Education & Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button id="mode-toggle" aria-label="Toggle dark/light mode">🌙</button>
-  </nav>
+<!-- ================= NAVIGATION ================= -->
 
-  <section id="home">
-    <div class="hero-container">
-      <div class="hero-content">
-        <h1 class="hero-name">Anuja Sathe</h1>
-        <p class="hero-tagline">Software Developer & Creative Problem Solver ✨</p>
-        <p class="hero-description">
-          I'm a Full Stack Developer who genuinely enjoys building things — whether it's a clean UI,
-          a tricky backend, or something brand new. I love learning, solving problems, and turning
-          ideas into real, working applications. Always growing, always curious!
+<nav>
+    <div class="nav-inner">
+
+        <a href="#home" class="logo">
+            <span class="logo-star">✦</span>
+
+            <span class="logo-text">
+                <strong>ANUJA SATHE</strong>
+                <span>SOFTWARE DEVELOPER</span>
+            </span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#contact" class="nav-btn">LET'S CONNECT ✦</a>
+
+    </div>
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <div class="eyebrow">
+                SOFTWARE DEVELOPER
+            </div>
+
+            <h1>
+                Building
+                <em>ideas</em>
+                that work.
+            </h1>
+
+            <p class="hero-description">
+                I'm Anuja, a passionate Software Developer who enjoys
+                creating clean interfaces, solving challenging problems
+                and turning ideas into real-world applications.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">
+                    View My Work →
+                </a>
+
+                <a href="#about" class="btn outline">
+                    About Me
+                </a>
+
+                <a href="resume (2).pdf" target="_blank" class="btn outline">
+                    View Resume
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-photo">
+            <img src="PFP1.jpg" alt="Anuja Sathe">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="intro" id="about">
+
+    <div class="container intro-grid">
+
+        <div class="intro-photo">
+            <img src="PFP1.jpg" alt="Anuja Sathe">
+        </div>
+
+        <div>
+
+            <div class="section-label">
+                ABOUT ANUJA
+            </div>
+
+            <h2>
+                I turn ideas into
+                <em>digital experiences.</em>
+            </h2>
+
+            <p>
+                I'm currently pursuing B.Tech in Computer Engineering
+                at Rajarambapu Institute of Technology.
+                I enjoy full-stack development, Android development,
+                UI design and learning new technologies.
+            </p>
+
+            <div class="signature">
+                Anuja Sathe ✦
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <strong>3+</strong>
+                <span>Years Learning & Building</span>
+            </div>
+
+            <div class="stat">
+                <strong>4+</strong>
+                <span>Major Projects</span>
+            </div>
+
+            <div class="stat">
+                <strong>5+</strong>
+                <span>Core Technologies</span>
+            </div>
+
+            <div class="stat">
+                <strong>∞</strong>
+                <span>Curiosity to Learn</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                HOW I WORK
+            </div>
+
+            <h2>
+                Technology with purpose.
+            </h2>
+
+            <p>
+                A mix of creativity, development and problem solving.
+            </p>
+
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service">
+                <div class="service-icon">⌘</div>
+                <h3>Full Stack</h3>
+                <p>
+                    Building responsive applications using
+                    frontend and backend technologies.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">◇</div>
+                <h3>Web Development</h3>
+                <p>
+                    Creating clean, responsive and
+                    user-friendly web experiences.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">✦</div>
+                <h3>Android Development</h3>
+                <p>
+                    Developing practical Android applications
+                    using Java and modern tools.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">♡</div>
+                <h3>Problem Solving</h3>
+                <p>
+                    Breaking complex problems into simple,
+                    reliable solutions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="projects" id="projects">
+
+    <div class="container">
+
+        <div class="projects-heading">
+
+            <div>
+                <div class="section-label">
+                    SELECTED WORK
+                </div>
+
+                <h2>
+                    Real projects.<br>
+                    Real learning.
+                </h2>
+            </div>
+
+            <a href="#contact" class="small-link">
+                Let's Work Together →
+            </a>
+
+        </div>
+
+
+        <div class="project-grid">
+
+            <article class="project-card">
+
+                <img
+                    src="1.png"
+                    class="project-img"
+                    alt="Gym Scheduling System"
+                >
+
+                <div class="project-content">
+
+                    <h3>Gym Scheduling System</h3>
+
+                    <p>
+                        A centralized Android platform for
+                        real-time gym resource booking and scheduling.
+                    </p>
+
+                    <div class="project-tools">
+                        Java · XML · Android Studio · HeidiSQL
+                    </div>
+
+                    <a href="#" class="small-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <img
+                    src="project5.png"
+                    class="project-img"
+                    alt="True Friends Foods"
+                >
+
+                <div class="project-content">
+
+                    <h3>True Friends Foods</h3>
+
+                    <p>
+                        A full-stack e-commerce platform for
+                        a frozen food business.
+                    </p>
+
+                    <div class="project-tools">
+                        React · JavaScript · Vercel
+                    </div>
+
+                    <a href="#" class="small-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <img
+                    src="3.png"
+                    class="project-img"
+                    alt="Portfolio Website"
+                >
+
+                <div class="project-content">
+
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A responsive portfolio showcasing
+                        skills, projects and my journey.
+                    </p>
+
+                    <div class="project-tools">
+                        HTML · CSS · JavaScript
+                    </div>
+
+                    <a href="#" class="small-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <img
+                    src="4.png"
+                    class="project-img"
+                    alt="QuantumGuard"
+                >
+
+                <div class="project-content">
+
+                    <h3>QuantumGuard</h3>
+
+                    <p>
+                        Blockchain-based platform focused on
+                        transaction security and data integrity.
+                    </p>
+
+                    <div class="project-tools">
+                        Blockchain · React · JavaScript
+                    </div>
+
+                    <a href="#" class="small-link">
+                        View Project →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROCESS ================= -->
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                MY PROCESS
+            </div>
+
+            <h2>
+                From curiosity to creation.
+            </h2>
+
+        </div>
+
+        <div class="process-grid">
+
+            <div class="process-step">
+                <div class="process-number">01</div>
+                <h3>Discover</h3>
+                <p>Understand the problem and requirements.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">02</div>
+                <h3>Research</h3>
+                <p>Explore technologies and possible solutions.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">03</div>
+                <h3>Build</h3>
+                <p>Turn ideas into functional applications.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">04</div>
+                <h3>Test</h3>
+                <p>Debug, improve and refine the experience.</p>
+            </div>
+
+            <div class="process-step">
+                <div class="process-number">05</div>
+                <h3>Launch</h3>
+                <p>Deploy and continue learning from the result.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TESTIMONIAL ================= -->
+
+<section class="testimonials">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                KIND WORDS
+            </div>
+
+            <h2>
+                People I've learned with.
+            </h2>
+
+        </div>
+
+        <div class="testimonial-grid">
+
+            <div class="testimonial">
+
+                <div class="quote">“</div>
+
+                <p>
+                    Anuja has a genuine curiosity for technology
+                    and consistently puts effort into learning
+                    and improving her work.
+                </p>
+
+                <div class="person">
+                    <div class="avatar">A</div>
+
+                    <div>
+                        <strong>Academic Mentor</strong>
+                        <span>RIT</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="quote">“</div>
+
+                <p>
+                    A hardworking developer who enjoys taking
+                    an idea and actually building something useful.
+                </p>
+
+                <div class="person">
+                    <div class="avatar">P</div>
+
+                    <div>
+                        <strong>Project Collaborator</strong>
+                        <span>Developer</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="testimonial">
+
+                <div class="quote">“</div>
+
+                <p>
+                    Her willingness to explore new technologies
+                    and solve problems is one of her strongest qualities.
+                </p>
+
+                <div class="person">
+                    <div class="avatar">M</div>
+
+                    <div>
+                        <strong>Team Member</strong>
+                        <span>Engineering</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATES ================= -->
+
+<section class="certificates" id="certificates">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                ACHIEVEMENTS
+            </div>
+
+            <h2>
+                Certificates & milestones.
+            </h2>
+
+        </div>
+
+        <div class="certificate-grid">
+
+            <div class="certificate">
+                <img src="hackathon.png" alt="Hackathon Certificate">
+                <div>
+                    <strong>RIT Hackathon 2025</strong>
+                </div>
+            </div>
+
+            <div class="certificate">
+                <img src="cpp.png" alt="Capstone Project">
+                <div>
+                    <strong>Capstone Project Research Paper</strong>
+                </div>
+            </div>
+
+            <div class="certificate">
+                <img src="hackcertificate.jpeg" alt="Hacksagon Finalist">
+                <div>
+                    <strong>Hacksagon 2026 Finalist</strong>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container contact-box">
+
+        <div>
+
+            <div class="section-label">
+                READY TO CONNECT?
+            </div>
+
+            <h2>
+                Let's build something
+                meaningful together.
+            </h2>
+
+            <p>
+                Whether it's a project, internship opportunity,
+                collaboration or simply a conversation about technology,
+                I'd love to hear from you.
+            </p>
+
+        </div>
+
+        <form
+            class="contact-form"
+            onsubmit="sendMessage(event)"
+        >
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                id="message"
+                placeholder="Tell me about your project..."
+                required
+            ></textarea>
+
+            <button class="btn" type="submit">
+                Send Message →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+        <p>
+            © 2026 Anuja Sathe. All rights reserved.
         </p>
-        <div class="hero-skills">
-          <span class="skill-badge">Keep Moving 🚀</span>
-          <span class="skill-badge">Keep Learning 📚</span>
-          <span class="skill-badge">Keep Growing 🌸</span>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
-        <div class="hero-links">
-          <a href="#education-experience" class="hero-link">View My Journey</a>
-          <a href="#projects" class="hero-link secondary">View Projects</a>
-<a href="resume (2).pdf" target="_blank" class="hero-link secondary">
-  📄 View Resume
-</a>         </div>
-      </div>
-      <div class="hero-image">
-        <img src="PFP1.jpg" alt="Anuja Sathe" class="profile-hero">
-      </div>
+
     </div>
-  </section>
 
-  <section id="education-experience">
-    <div class="container">
-      <div class="ed-exp-container">
+</footer>
 
-        <!-- Education Section -->
-        <div class="education-section">
-          <h2>Education</h2>
-          <div class="education-timeline">
-            <div class="education-item">
-              <div class="education-header">
-                <h3>B.Tech Computer Engineering</h3>
-                <span class="education-year">2028 (expected)</span>
-              </div>
-              <div class="education-institution">Rajarambapu Institute of Technology, Rajaramnagar</div>
-              <div class="education-location">Maharashtra</div>
-              <div class="education-status">Currently pursuing</div>
-            </div>
-            <div class="education-item">
-              <div class="education-header">
-                <h3>Diploma Computer Engineering</h3>
-                <span class="education-year">2024</span>
-              </div>
-              <div class="education-institution">Rajarambapu Institute of Technology, Rajaramnagar</div>
-              <div class="education-location">Maharashtra</div>
-              <div class="education-score">87%</div>
-            </div>
-            <div class="education-item">
-              <div class="education-header">
-                <h3>SSC</h3>
-                <span class="education-year">2022</span>
-              </div>
-              <div class="education-institution">Maharashtra State Board</div>
-              <div class="education-location">Satara, Maharashtra</div>
-              <div class="education-score">93.60%</div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Experience Section -->
-        <div class="experience-section">
-          <h2>Experience</h2>
-          <div class="experience-timeline">
-            <div class="experience-item">
-              <div class="experience-header">
-                <h3>IUCEE Student Member</h3>
-                <span class="experience-period">2025 - Present</span>
-              </div>
-              <div class="experience-company">Indo-Universal Collaboration for Engineering Education (IUCEE)</div>
-              <div class="experience-description">
-                <p>Active student member of IUCEE, contributing to the advancement of engineering education through professional networking and knowledge sharing.</p>
-                <ul>
-                  <li>Engaged in professional development activities</li>
-                  <li>Participation in technical discussions and events - IASF 2026</li>
-                  <li>Commitment to continuous learning in engineering fields</li>
-                </ul>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-header">
-                <h3>Android Development Internship</h3>
-                <span class="experience-period">01 June 2024 - 13 July 2024</span>
-              </div>
-              <div class="experience-company">ECS Software Technologies Pvt Ltd, Karad</div>
-              <div class="experience-location">Karad, Maharashtra</div>
-              <div class="experience-description">
-                <p>Completed a hands-on Android development internship — my first real taste of industry-level development and I loved every bit of it!</p>
-                <ul>
-                  <li><strong>Tools Used:</strong> Android Studio, Java, XML, Firebase, Gradle, Git, and Emulator</li>
-                  <li><strong>Android Studio Role:</strong> Primary IDE for writing code, designing UIs, and debugging applications</li>
-                  <li>Learned the mobile app development lifecycle from design to deployment</li>
-                  <li>Worked on real-world Android application projects</li>
-                </ul>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-header">
-                <h3>Personal Projects</h3>
-                <span class="experience-period">2022 - Present</span>
-              </div>
-              <div class="experience-company">Self-Learning & Development</div>
-              <div class="experience-location">Satara, Maharashtra</div>
-              <div class="experience-description">
-                <p>Building personal projects has been my favourite way to learn — there's nothing like figuring things out by actually building them!</p>
-                <ul>
-                  <li>Developed portfolio website with modern UI/UX</li>
-                  <li>Created responsive web applications</li>
-                  <li>Explored new technologies and frameworks</li>
-                  <li>Continuous learning and skill improvement</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+<script>
 
-      </div>
-    </div>
-  </section>
+function sendMessage(event) {
 
-  <section id="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Programming Languages</h3>
-          <div class="skill-item">
-            <span class="skill-name">Java</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Python</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">JavaScript</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Web Technologies</h3>
-          <div class="skill-item">
-            <span class="skill-name">HTML</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">CSS</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">React</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Node JS</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 80%"></div></div>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>Tools & Technologies</h3>
-          <div class="skill-item">
-            <span class="skill-name">Android Studio</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Git</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 60%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">MySQL</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">SUPABASE</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 85%"></div></div>
-          </div>
-          <div class="skill-item">
-            <span class="skill-name">Firebase</span>
-            <div class="skill-bar"><div class="skill-fill" style="width: 65%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    event.preventDefault();
 
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <img src="1.png" alt="Gym Scheduling System" class="project-img">
-          <div class="project-content">
-            <h3>Gym Scheduling System</h3>
-            <p>A centralized, automated platform for real-time booking and scheduling of gym resources — built to make life easier for both gym members and staff!</p>
-            <div class="project-tools"><strong>Technologies:</strong> Java, XML, Android Studio, HeidiSQL</div>
-            <button class="btn project-btn" onclick="toggleProjectDetails(1)">View Details</button>
-          </div>
-          <div class="project-details" id="project-details-1" style="display: none;">
-            <p>The app includes two distinct interfaces: an Admin panel and a User panel. The Admin panel manages all contact entries with full CRUD access, while the User panel provides a clean read-only view for searching and contacting professionals quickly.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="project5.png" alt="True Friends Foods" class="project-img">
-          <div class="project-content">
-            <h3>True Friends Foods</h3>
-            <p>A full-stack e-commerce web application built for a frozen food business in Maharashtra — making it easy for customers to browse, cart, and order!</p>
-            <div class="project-tools"><strong>Technologies:</strong> React, JavaScript, Vercel</div>
-            <a href="https://true-friends-frontend.vercel.app/" target="_blank" class="btn project-btn">View Project</a>
-            <button class="btn project-btn" onclick="toggleProjectDetails(3)">View Details</button>
-          </div>
-          <div class="project-details" id="project-details-3" style="display: none;">
-            <p>True Friends Foods is a full-stack e-commerce platform for a frozen food business based in Maharashtra, India. Customers can browse premium frozen food products, add items to a cart, and place orders seamlessly via WhatsApp — perfect for small businesses that manage orders personally.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="3.png" alt="Portfolio Website" class="project-img">
-          <div class="project-content">
-            <h3>Personal Portfolio Website</h3>
-            <p>This very website! A responsive portfolio showcasing my skills, projects, and journey — built with care and a lot of love for clean design.</p>
-            <div class="project-tools"><strong>Technologies:</strong> HTML, CSS, JavaScript</div>
-            <a href="https://anujacodes.vercel.app/" target="_blank" class="btn project-btn">View Project</a>
-            <button class="btn project-btn" onclick="toggleProjectDetails(2)">View Details</button>
-          </div>
-          <div class="project-details" id="project-details-2" style="display: none;">
-            <p>Features smooth scrolling, dark mode toggle, interactive elements, and responsive design. Includes sections for about me, skills, projects, certificates, and contact information.</p>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="4.png" alt="QuantumGuard Blockchain System" class="project-img">
-          <div class="project-content">
-            <h3>QuantumGuard Blockchain System for Farmers</h3>
-            <p>A blockchain-based platform to secure transactions and data integrity for farmers — built during a hackathon to tackle real agricultural challenges!</p>
-            <div class="project-tools"><strong>Technologies:</strong> Blockchain, React, JavaScript, Vercel</div>
-            <a href="https://quantum-guard-hackathon.vercel.app/" target="_blank" class="btn project-btn">View Project</a>
-            <button class="btn project-btn" onclick="toggleProjectDetails(4)">View Details</button>
-          </div>
-          <div class="project-details" id="project-details-4" style="display: none;">
-            <p>QuantumGuard leverages blockchain technology to create a secure and transparent system for farmers, with features for transaction security, data verification, and supply chain traceability.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    const name = document.getElementById("name").value;
 
-  <section id="certificates">
-    <div class="container">
-      <h2>Certificates</h2>
-      <div class="certificates-gallery">
-        <div class="certificate-item">
-          <img src="hackathon.png" alt="Hackathon Certificate" class="certificate-img">
-          <div class="certificate-title">Hackathon Participant — RIT Hackathon 2025</div>
-        </div>
-        <div class="certificate-item">
-          <img src="cpp.png" alt="Capstone Project Research Paper" class="certificate-img">
-          <div class="certificate-title">Capstone Project Research Paper</div>
-        </div>
-        <div class="certificate-item">
-          <img src="hackcertificate.jpeg" alt="Finalist of Hacksagon2026" class="certificate-img">
-          <div class="certificate-title">Finalist — Hacksagon 2026 (IIITM Gwalior)</div>
-        </div>
-      </div>
-    </div>
-  </section>
+    alert(
+        "Thank you, " +
+        name +
+        "! Your message has been received."
+    );
 
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <div class="contact-info-list">
-        <div class="contact-card">
-          <img src="phone.svg" alt="Phone" class="contact-icon">
-          <div class="contact-details">
-            <span class="contact-label">Phone</span>
-            <a href="tel:+919022791622">+91 9022791622</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <img src="email.svg" alt="Email" class="contact-icon">
-          <div class="contact-details">
-            <span class="contact-label">Email</span>
-            <a href="mailto:anujasathe2607@gmail.com">anujasathe2607@gmail.com</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <img src="github.svg" alt="GitHub" class="contact-icon">
-          <div class="contact-details">
-            <span class="contact-label">GitHub</span>
-            <a href="https://github.com/anuja-git-code" target="_blank">anuja-git-code</a>
-            <br>
-            <a href="https://github.com/2560006-prog" target="_blank">2560006-prog</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <img src="linkedin.svg" alt="LinkedIn" class="contact-icon">
-          <div class="contact-details">
-            <span class="contact-label">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/anuja-sathe-4421ab252" target="_blank">anujasathe</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    event.target.reset();
+}
 
-  <footer>
-    <div class="container">
-      <p>Made with 💜 by Anuja Sathe &copy; 2026. All rights reserved.</p>
-    </div>
-  </footer>
 
-  <button id="back-to-top" title="Back to top">↑</button>
-  <script src="script.js"></script>
+window.addEventListener("scroll", function () {
+
+    const nav = document.querySelector("nav");
+
+    if (window.scrollY > 50) {
+        nav.style.boxShadow = "0 5px 25px rgba(0,0,0,.06)";
+    } else {
+        nav.style.boxShadow = "none";
+    }
+
+});
+
+</script>
+
 </body>
 </html>
